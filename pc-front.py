@@ -1,15 +1,13 @@
 from playsound import playsound 
-from networktables import NetworkTables
-import logging
+from networktables import  NetworkTables
+# import logging
+# logging.basicConfig(level=logging.DEBUG)
 
-logging.basicConfig(level=logging.DEBUG)
-NetworkTables.initialize(server="10.71.8.2")
+ip = "10.71.8.2"
 
-table = NetworkTables.getTable("datatable")
-
+NetworkTables.initialize(server = ip)
+sd = NetworkTables.getTable("datatable")
 
 while True:
-
-if (table.getBoolean("limitswitch") = true)       
-playsound('insert/the/filepath/here/example.mp3') 
-
+    if (sd.getNumber("Soundworks", 0) == 17):
+            playsound('C:/Users/mars/Desktop/a.mp3') 
