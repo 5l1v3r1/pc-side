@@ -3,13 +3,31 @@ from networktables import  NetworkTables
 # import logging
 # logging.basicConfig(level=logging.DEBUG)
 
-ip = "127.0.0.1"
+ip = "10.71.8.2"
 
 NetworkTables.initialize(server = ip)
 sd = NetworkTables.getTable("datatable")
-sdFlag = 0
+sdFlagForInit = 0
+sdFlagForBox = 0
+sdFlagOnce = 0
 
 while True:
-    if ((sd.getNumber("Soundworks", 0) == 17) and sdFlag == 0):
-        playsound('sound.mp3')
-        sdFlag = 1
+    if ((sd.getBoolean("init", False) == True) and sdFlagForInit == 0):
+        playsound('C:/ Users/mars/Desktop/sesler/robotu-aciyorum.mp3')
+        sdFlagForInit = 1
+    
+    if ((sd.getBoolean("Limit Switch Status", False) == True) and sdFlagForBox == 0):
+        playsound('C:/ Users/mars/Desktop/sesler/kutuyu-aldim.mp3')
+        sdFlagForBox = 1
+        
+    if ((sd.getBoolean("releaseCube", False) == True) and sdFlagForBox == 1):
+        playsound('C:/ Users/mars/Desktop/sesler/kutuyu-atiyorum.mp3')
+        sdFlagForBox = 0
+    
+    if ((sd.getDouble("tyme", 0.0) == 50.0) and sdFlagOnce == 0):
+        playsound('C:/ Users/mars/Desktop/sesler/son-50.mp3')
+        sdFlagOnce = 1
+    
+    if ((sd.getDouble("tyme", 0.0) == 50.0) and sdFlagOnce == 0):
+        playsound('C:/ Users/mars/Desktop/sesler/do-it.mp3')
+        sdFlagOnce1 = 1
