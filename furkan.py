@@ -35,7 +35,7 @@ while True:
         if ((sd.getNumber("tyme", 0.0) == 35.0) and sdFlagOnce1 == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/do-it.mp3')
             sdFlagOnce1 = 1
-        print("anan")    
+          
     elif(lang == "tr"):    
         if ((sd.getBoolean("init", False) == True) and sdFlagForInit == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/robotu-aciyorum.mp3')
@@ -56,7 +56,7 @@ while True:
         if ((sd.getNumber("tyme", 0.0) == 35.0) and sdFlagOnce1 == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/do-it.mp3')
             sdFlagOnce1 = 1
-        print("anan")    
+           
         
     if (lang == "EN"):
         
@@ -79,7 +79,7 @@ while True:
         if ((sd.getNumber("tyme", 0.0) == 35.0) and sdFlagOnce1 == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng')
             sdFlagOnce1 = 1
-        print("your mom")
+        
     elif(lang == "en"):
         if ((sd.getBoolean("init", False) == True) and sdFlagForInit == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng')
@@ -100,11 +100,11 @@ while True:
         if ((sd.getNumber("tyme", 0.0) == 35.0) and sdFlagOnce1 == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng')
             sdFlagOnce1 = 1
-        print("your mom")
+        
         
     elif(lang != "en" and lang != "EN" and lang != "tr" and lang != "TR"):
-        print("restart the program and type a correct word(en or tr)")
-        print("lutfen gecerli bir dil giriniz(tr ya da en)")
+        print("Restart the program and type a correct word(en or tr)")
+        print("Lutfen gecerli bir dil giriniz(tr ya da en)")
         time.sleep(3)
         break
         
