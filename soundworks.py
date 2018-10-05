@@ -28,7 +28,7 @@ while True:
             playsound('C:/Users/mars/Desktop/sesler/Tur/kutuyu-atiyorum.mp3')
             sdFlagForBox = 0
     
-        if ((sd.getNumber("time", 0.0) == 50.0) and sdFlagOnce == 0):
+        if ((sd.getNumber("tyme", 0.0) == 50.0) and sdFlagOnce == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/son-50.mp3')
             sdFlagOnce = 1
             
@@ -50,7 +50,7 @@ while True:
             playsound('C:/Users/mars/Desktop/sesler/Eng/speechthrow.mp3')
             sdFlagForBox = 0
       
-        if ((sd.getNumber("time", 0.0) == 50.0) and sdFlagOnce == 0):
+        if ((sd.getNumber("tyme", 0.0) == 50.0) and sdFlagOnce == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng/speech(2).mp3')
             sdFlagOnce = 1
         
