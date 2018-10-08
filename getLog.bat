@@ -1,2 +1,2 @@
-scp -rp admin@10.71.8.2:/home/lvuser/Logging* .
+scp -rp lvuser@10.71.8.2:/home/lvuser/Logging* .
 pause
