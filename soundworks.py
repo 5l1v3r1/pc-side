@@ -28,11 +28,11 @@ while True:
             playsound('C:/Users/mars/Desktop/sesler/Tur/kutuyu-atiyorum.mp3')
             sdFlagForBox = 0
     
-        if ((sd.getNumber("tyme", 9999999.0) <= 50.0) and sdFlagOnce == 0):
+        if ((sd.getNumber("tyme", 9999999.0) <= 100.0) and sdFlagOnce == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/son-50.mp3')
             sdFlagOnce = 1
             
-        if ((sd.getNumber("tyme", 9999999.0) <= 35.0) and sdFlagOnce1 == 0):
+        if ((sd.getNumber("tyme", 9999999.0) <= 115.0) and sdFlagOnce1 == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/do-it.mp3')
             sdFlagOnce1 = 1
         
@@ -50,11 +50,11 @@ while True:
             playsound('C:/Users/mars/Desktop/sesler/Eng/speechthrow.mp3')
             sdFlagForBox = 0
       
-        if ((sd.getNumber("tyme", 999999.0) <= 50.0) and sdFlagOnce == 0):
+        if ((sd.getNumber("tyme", 999999.0) <= 100.0) and sdFlagOnce == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng/speech(2).mp3')
             sdFlagOnce = 1
         
-        if ((sd.getNumber("tyme", 999999.0) <= 35.0) and sdFlagOnce1 == 0):
+        if ((sd.getNumber("tyme", 999999.0) <= 115.0) and sdFlagOnce1 == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng/speech(3).mp3')
             sdFlagOnce1 = 1
             
