@@ -18,6 +18,7 @@ while True:
     if (lang == "TR" and lang == "tr" ):        
         if ((sd.getBoolean("init", False) == True) and sdFlagForInit == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/robotu-aciyorum.mp3')
+            print("anan")
             sdFlagForInit = 1
     
         if ((sd.getBoolean("Limit Switch Status", False) == True) and sdFlagForBox == 0):
