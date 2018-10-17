@@ -18,7 +18,7 @@ while True:
     if (lang == "TR" and lang == "tr" ):        
         if ((sd.getBoolean("init", False) == True) and sdFlagForInit == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/robotu-aciyorum.mp3')
-            print("anan")
+            sonCalinan = "Robotu aciyorum"
             sdFlagForInit = 1
     
         if ((sd.getBoolean("Limit Switch Status", False) == True) and sdFlagForBox == 0):
@@ -27,21 +27,25 @@ while True:
         
         if ((sd.getBoolean("releaseCube", False) == True) and sdFlagForBox == 1):
             playsound('C:/Users/mars/Desktop/sesler/Tur/kutuyu-atiyorum.mp3')
-            sdFlagForBox = 0
+			sdFlagForBox = 0
     
         if ((sd.getNumber("tyme", 9999999.0) <= 100.0) and sdFlagOnce == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/son-50.mp3')
-            sdFlagOnce = 1
+            sonCalinan = "Son 50 saniye"
+			sdFlagOnce = 1
             
         if ((sd.getNumber("tyme", 9999999.0) <= 115.0) and sdFlagOnce1 == 0):
             playsound('C:/Users/mars/Desktop/sesler/Tur/do-it.mp3')
-            sdFlagOnce1 = 1
+            sonCalinan = "Do it!"
+			sdFlagOnce1 = 1
         
+		sd.putString("En son calinan", sonCalinan)
     if (lang == "EN" and lang == "en"):
         
         if ((sd.getBoolean("init", False) == True) and sdFlagForInit == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng/speech.mp3')
-            sdFlagForInit = 1
+            lastPlayed = "Robot ready"
+			sdFlagForInit = 1
       
         if ((sd.getBoolean("Limit Switch Status", False) == True) and sdFlagForBox == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng/have-box.mp3')
@@ -53,11 +57,13 @@ while True:
       
         if ((sd.getNumber("tyme", 999999.0) <= 100.0) and sdFlagOnce == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng/speech(2).mp3')
-            sdFlagOnce = 1
+            lastPlayed = "Last 50 seconds"
+			sdFlagOnce = 1
         
         if ((sd.getNumber("tyme", 999999.0) <= 115.0) and sdFlagOnce1 == 0):
             playsound('C:/Users/mars/Desktop/sesler/Eng/speech(3).mp3')
-            sdFlagOnce1 = 1
+            lastPlayed = "Last 35 seconds"
+			sdFlagOnce1 = 1
             
     elif(lang != "en" and lang != "EN" and lang != "tr" and lang != "TR"):
         print("Restart the program and type a correct word(en or tr)")
