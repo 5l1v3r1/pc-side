@@ -1,6 +1,7 @@
+from gtts import gTTS
 from playsound import playsound 
-from networktables import NetworkTables
-import time
+from networktables import NetworkTables 
+import os
 
 ip = "10.71.8.2"
 
@@ -10,33 +11,19 @@ sdFlagForInit = 0
 sdFlagForBox = 0
 sdFlagOnce = 0
 sdFlagOnce1 = 0
+seconds = sd.getNumber("matchTime", 0)
+queue = 0        
 
-
-while True:
-
-        
-    if ((sd.getBoolean("init", False) == True) and sdFlagForInit == 0):
-        playsound('C:/Users/mars/Desktop/sesler/Eng/speech.mp3')
-        lastPlayed = "Robot ready"
+while (True):
+    
+    if (sdFlagForInit == 0):
+        playsound('C:/Users/mars/Desktop/pc-side/ready.mp3')
         sdFlagForInit = 1
-      
-    if ((sd.getBoolean("Limit Switch Status", False) == True) and sdFlagForBox == 0):
-        playsound('C:/Users/mars/Desktop/sesler/Eng/have-box.mp3')
-        sdFlagForBox = 1
         
-    if ((sd.getBoolean("releaseCube", False) == True) and sdFlagForBox == 1):
-        playsound('C:/Users/mars/Desktop/sesler/Eng/speechthrow.mp3')
-        sdFlagForBox = 0
-      
-    if ((sd.getNumber("tyme", 999999.0) <= 100.0) and sdFlagOnce == 0):
-        playsound('C:/Users/mars/Desktop/sesler/Eng/speech(2).mp3')
-        lastPlayed = "Last 50 seconds"
-        sdFlagOnce = 1
-        
-    if ((sd.getNumber("tyme", 999999.0) <= 115.0) and sdFlagOnce1 == 0):
-        playsound('C:/Users/mars/Desktop/sesler/Eng/speech(3).mp3')
-        lastPlayed = "Last 35 seconds"
-        sdFlagOnce1 = 1
-            
-
-        
+    if (sd.boolean("tymeButton", False) == True):
+        tts = gTTS(text = seconds + 'seconds left', lang='en')
+        tts.save('textToSpeech' + queue + '.mp3')
+        os.system("mpg321 good.mp3")
+        playsound('C:/Users/mars/Desktop/pc-side/textToSpeech.mp3')
+        queue = queue + 1 
+        sd.putBoolean("tymeButton", False)
