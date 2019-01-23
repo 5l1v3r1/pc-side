@@ -1,3 +1,4 @@
 
 cd C:/Users/mars/Desktop/pc-side/
-furkan.py
+soundworks.py
+pause
